@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./static/uploads:/app/static/uploads
+      - ./database.db:/app/database.db
+    environment:
+      - SECRET_KEY=kavotavo
+    restart: unless-stopped

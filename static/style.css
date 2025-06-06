@@ -78,18 +78,47 @@ form button {
     transition: all 0.3s ease;
 }
 
+form button:hover {
+    background: linear-gradient(135deg, #0069d9, #004a9c);
+}
+
 .post {
-    background-color: #f9f9f9;
-    padding: 20px;
-    margin-bottom: 25px;
+    background-color: #ffffff;
+    padding: 28px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
     border-left: 5px solid #007BFF;
-    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-left-color: #0062cc;
 }
 
 .post h2 {
     color: #007BFF;
     text-align: left;
     margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.post-content {
+    color: #444;
+    line-height: 1.7;
+    font-size: 1.05em;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
 }
 
 footer {
@@ -108,5 +137,9 @@ footer {
     nav a {
         display: block;
         margin: 10px 0;
+    }
+
+    .post {
+        padding: 20px;
     }
 }

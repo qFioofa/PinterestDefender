@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <title>Вход</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        window.onload = function () {
+            {% if error %}
+            alert("{{ error }}");
+            {% endif %}
+        };
+    </script>
 </head>
 
 <body>
