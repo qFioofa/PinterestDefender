@@ -7,7 +7,9 @@ services:
       - "5000:5000"
     volumes:
       - ./static/uploads:/app/static/uploads
-      - ./database.db:/app/database.db
+      - ./database:/app/database
     environment:
-      - SECRET_KEY=kavotavo
+      - SECRET_KEY=mewmewmew
+    user: "1000:1000"
+    working_dir: /app
     restart: unless-stopped

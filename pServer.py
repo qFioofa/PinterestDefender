@@ -60,8 +60,8 @@ class appWrapper:
 
 class pServer:
     @staticmethod
-    def run(debug: bool = False) -> None:
-        appWrapper.app.run(debug=debug)
+    def run(debug: bool = False, host : str = "0.0.0.0", port : int = 5000) -> None:
+        appWrapper.app.run(debug=debug, host=host, port=port)
 
     @staticmethod
     def get_app() -> Flask | None:

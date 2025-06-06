@@ -12,6 +12,7 @@ if __name__ == '__main__':
     args, unknown = parser.parse_known_args()
 
     os.makedirs("static/uploads", exist_ok=True)
+    os.makedirs("database", exist_ok=True)
 
     appWrapper.init()
     pDataBase(pServer.get_app())

@@ -5,6 +5,8 @@ ENV PYTHONUNBUFFERED 1
 ENV FLASK_APP=start.py
 ENV FLASK_ENV=production
 
+RUN useradd -m appuser
+
 RUN echo "Acquire::Retries \"5\";" > /etc/apt/apt.conf.d/80-retries && \
     echo "Acquire::http::Timeout \"30\";" >> /etc/apt/apt.conf.d/80-retries && \
     apt-get update --fix-missing || apt-get update
@@ -24,6 +26,10 @@ COPY . .
 RUN mkdir -p static/uploads && \
     chmod 755 static/uploads && \
     chown -R 1000:1000 static/uploads
+
+RUN chown -R appuser:appuser /app && \
+    mkdir -p /app/database && \
+    chmod 755 /app/database
 
 USER 1000
 
